@@ -1,0 +1,111 @@
+body {
+    background-color: #2B3145;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 50%;
+    padding: 20px;
+    top: 10px;
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px auto;
+
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+h1, h2, span {
+    color: #DDB992;
+}
+
+table {
+    position: relative;
+    width: 80%;
+    padding: 20px;
+    top: 10px;
+    margin: 10px auto;
+    border-collapse: collapse;
+    background-color: white;
+    color: #DDB992;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;    
+}
+
+tbody, th, td {
+    border: 1.5px solid #2B3145;
+    text-align: center;;
+}
+
+.collapsible {
+    background-color: #DDB992;;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color:#f3cfa8;;
+}
+
+.babilonese-collapsible, .errore-collapsible, .tangenti-collapsible, .inverso-collapsible {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.calcola {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border: none;
+    border-radius: 2em;;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color: #DDB992;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.divparagone {
+    min-height: fit-content;
+    min-width: fit-content;
+}
+
+#bottone-link, #bottone-paragone, #bottone-tabella {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border: none;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color: #DDB992;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+#bottone-link:hover, #bottone-paragone:hover {
+    background-color:#e9c59f;
+}
