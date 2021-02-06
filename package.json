@@ -1,0 +1,12 @@
+{
+    "name": "radicequadratav2",
+    "version": "1.0.0",
+    "description": "First try with Node.js",
+    "main": "app.js",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.19.0"
+    }
+}
