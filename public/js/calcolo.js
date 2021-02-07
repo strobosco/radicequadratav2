@@ -1,5 +1,4 @@
 // Funzioni per le sezioni apribili
-
 function babiloneseCollapsible(){
 
     var button = document.getElementsByClassName("collapsible");
@@ -141,4 +140,28 @@ function Tangenti(){
     
     }
 
+}
+
+async function postJSON(){
+
+    let radicando = document.getElementById("radicando-babilonese").value;
+    let iterazioni = document.getElementById("ripetizioni-babilonese").value;
+
+    const data = {
+        radicando: radicando,
+        iterazioni: iterazioni
+    };
+    var json = JSON.stringify(data);
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: json
+    };
+
+    const res = await fetch("/", options);
+    const resjson = await res.json();
+    console.log(resjson);
 }
