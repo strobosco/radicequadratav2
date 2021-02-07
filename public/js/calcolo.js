@@ -57,97 +57,14 @@ function inversoCollapsible(){
 
 
 //--------------------------------------------------------
-// Funzioni per il calcolo della radice
-const EPS = 0.00001;
 
-
-function Babilonese(){
-
-    radicando = document.getElementById("radicando-babilonese").value;
-
-    if(radicando <= 0){
-        alert("Inserire un radicando positivo: ")
-        document.getElementById("radicando-babilonese").focus();
-    } else {
-
-        ripetizioni = document.getElementById("ripetizioni-babilonese").value;
-
-        var Q, Qprec, n;
-        n = 0;
-        Qprec = radicando / 2;
-        for(n = 0; n < ripetizioni; n++){
-            Q = (Qprec + radicando / Qprec) / 2;
-            Qprec = Q;
-        }
-
-        statement = "La radice approssimata e': " + Q;
-        document.getElementById("risultato-babilonese"). innerHTML = statement;
-
-    }
-}
-
-function Errore(){
-
-    radicando = document.getElementById("radicando-errore").value;
-
-    if(radicando <= 0){
-        alert("Inserire un radicando positivo: ")
-        document.getElementById("radicando-errore").focus();
-    } else {
-
-        ripetizioni = document.getElementById("ripetizioni-errore").value;
-
-        var Q, Qprec, errore;
-        var n, esci = 0;
-        Qprec = radicando / 2;
-        for(n = 0; n < ripetizioni && !esci; n++){
-            Q = (Qprec + radicando / Qprec) / 2;
-            errore = Math.abs((Q - Qprec) / Q);
-            if(errore < EPS) {
-                esci = 1;
-            } else {
-                Qprec = Q;
-            }
-        }
-
-        statement = "La radice approssimata e': " + Q;
-        document.getElementById("risultato-errore"). innerHTML = statement;
-    
-    }
-}
-
-// da definire tangenti e inverso
-
-function Tangenti(){
-
-    radicando = document.getElementById("radicando-tangenti").value;
-
-    if(radicando <= 0){
-        alert("Inserire un radicando positivo: ")
-        document.getElementById("radicando-tangenti").focus();
-    } else {
-
-        ripetizioni = document.getElementById("ripetizioni-tangenti").value;
-
-        var volte = 0;
-        var x = 1.0;
-        for(volte = 0; volte <= ripetizioni; volte++){
-            x = (x / 2) + (radicando / (2 * x));
-        }
-
-        statement = "La radice approssimata e': " + x;
-        document.getElementById("risultato-tangenti"). innerHTML = statement;
-    
-    }
-
-}
-
-async function postJSON(){
+async function postJSONBabilonese(){
 
     let radicando = document.getElementById("radicando-babilonese").value;
     let iterazioni = document.getElementById("ripetizioni-babilonese").value;
 
     const data = {
+        metodo: "babilonese",
         radicando: radicando,
         iterazioni: iterazioni
     };
@@ -156,7 +73,60 @@ async function postJSON(){
     const options = {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: json
+    };
+
+    const res = await fetch("/", options);
+    const resjson = await res.json();
+    console.log(resjson);
+}
+
+async function postJSONErrore(){
+
+    let radicando = document.getElementById("radicando-errore").value;
+    let iterazioni = document.getElementById("ripetizioni-errore").value;
+
+    const data = {
+        metodo: "errore",
+        radicando: radicando,
+        iterazioni: iterazioni
+    };
+    var json = JSON.stringify(data);
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: json
+    };
+
+    const res = await fetch("/", options);
+    const resjson = await res.json();
+    console.log(resjson);
+}
+
+async function postJSONTangenti(){
+
+    let radicando = document.getElementById("radicando-tangenti").value;
+    let iterazioni = document.getElementById("ripetizioni-tangenti").value;
+
+    const data = {
+        metodo: "tangenti",
+        radicando: radicando,
+        iterazioni: iterazioni
+    };
+    var json = JSON.stringify(data);
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
         },
         body: json
     };

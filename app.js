@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const body = require("body-parser")
+const radice = require("./public/js/funzioni");
 
 const app = express();
 const PORT = 8080;
@@ -15,11 +15,32 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     console.log("Request received!");
     data = req.body;
-    console.log(data);
+    metodo = req.body.metodo;
+    radicando = req.body.radicando;
+    iterazioni = req.body.iterazioni;
+    
+    var risultato = 0;
+    switch(metodo){
+        case "babilonese":
+            risultato = radice.Babilonese(radicando, iterazioni);
+            break;
+        case "errore":
+            risultato = radice.Errore(radicando, iterazioni);
+            break;
+        case "tangenti":
+            risultato = radice.Tangenti(radicando, iterazioni);
+            break;
+        default:
+            console.log("Metodo non supportato.");
+            break;
+    }    
+
+    console.log({data, risultato});
     res.json({
         status: "success",
-        radicando: data.radicando,
-        iterazioni: data.iterazioni
+        radicando: radicando,
+        iterazioni: iterazioni,
+        risultato: JSON.stringify(risultato)
     });
 });
 
