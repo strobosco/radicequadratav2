@@ -38,7 +38,7 @@ module.exports.Tangenti = function Tangenti(num, iterazioni){
 
     var volte = 0;
     var x = 1.0;
-    for(volte = 0; volte <= ripetizioni; volte++){
+    for(volte = 0; volte <= iterazioni; volte++){
         x = (x / 2) + (radicando / (2 * x));
     }
 

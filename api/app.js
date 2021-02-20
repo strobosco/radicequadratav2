@@ -6,11 +6,11 @@ const app = express();
 const PORT = 8080;
 
 app.use(express.json(limit="1mb"));
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(path.join(__dirname + "public/css")));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/html/index.html"));
-});
+/*app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname + "/../client/public/index.html"));
+});*/
 
 app.post("/", (req, res) => {
     console.log("Request received!");
@@ -33,7 +33,7 @@ app.post("/", (req, res) => {
         default:
             console.log("Metodo non supportato.");
             break;
-    }    
+    }
 
     console.log({data, risultato});
     res.json({
@@ -45,5 +45,5 @@ app.post("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("App listening on:${PORT}");
+    console.log("App listening on: ${PORT}");
 });
