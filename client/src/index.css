@@ -3,7 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.titolo, .babilonese, .errore, .tangenti {
+.titolo, .babilonese, .errore, .tangenti, .link, .tabella-output {
   position: relative;
   background-color: white;
   color: black;

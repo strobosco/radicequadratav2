@@ -44,6 +44,46 @@ app.post("/", (req, res) => {
     });
 });
 
+app.post("/paragone", (req, res) => {
+    console.log("Request received!");
+    data = req.body;
+    radicando = req.body.radicando;
+    iterazioni = req.body.iterazioni;
+    confronti = req.body.confronti;
+    
+    var risultato = [];
+    for(var i = 0; i < confronti; i++) {
+
+        let risBab = radice.Babilonese(radicando, iterazioni);
+        let risErr = radice.Errore(radicando, iterazioni);
+        let risTan = radice.Tangenti(radicando, iterazioni);
+
+        const ris = {
+            confronto: i + 1,
+            babilonese: risBab,
+            errore:risErr,
+            tangenti: risTan,
+        }
+
+
+        risultato[i] = {
+            confronto: i + 1,
+            babilonese: risBab,
+            errore:risErr,
+            tangenti: risTan,
+        }
+
+    }
+
+    console.log({data, risultato});
+    res.json({
+        status: "success",
+        radicando: radicando,
+        iterazioni: iterazioni,
+        risultato: JSON.stringify(risultato)
+    });
+});
+
 app.listen(PORT, () => {
     console.log("App listening on: ${PORT}");
 });
