@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ParagoneInput = ({ risultato, setRisultato}) => {
+const ParagoneInput = ({ risultato, setRisultato, showHead, setShowHead }) => {
 
     const [radicando, setRadicando] = useState("")
     const [ripetizioni, setRipetizioni] = useState("")
@@ -30,6 +30,9 @@ const ParagoneInput = ({ risultato, setRisultato}) => {
         setRisultato(resjsonrisultato)
         console.log(risultato)
 
+        if(showHead == false) {
+            setShowHead(true)
+        }
         /*const risBab = []
         const risErr = []
         const risTan = []
