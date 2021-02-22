@@ -39,9 +39,21 @@ module.exports.Tangenti = function Tangenti(num, iterazioni){
     var volte = 0;
     var x = 1.0;
     for(volte = 0; volte <= iterazioni; volte++){
-        x = (x / 2) + (radicando / (2 * x));
+        x = (x / 2) + (num / (2 * x));
     }
 
+    return x;
+
+}
+
+module.exports.Inverso = function Inverso(num, iterazioni){
+
+    var volte = 0;
+    var x = 0.002;
+    for(volte = 0; volte <= iterazioni; volte++){
+        x = 0.5 * x * (3 - num * x * x);
+    }
+    
     return x;
 
 }

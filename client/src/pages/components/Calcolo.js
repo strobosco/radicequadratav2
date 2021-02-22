@@ -5,17 +5,6 @@ const Calcolo = ({ nameOfClass, setRisultato }) => {
     const [radicando, setRadicando] = useState("")
     const [ripetizioni, setRipetizioni] = useState("")
 
-    /*const onSubmit = (e) => {
-        e.preventDefault()
-
-        if(radicando <= 0) {
-            alert("Inserire radicando positivo")
-            return
-        }
-
-        calcolo(radicando, ripetizioni)
-    }*/
-
     const onSubmit = async (e) => {
         e.preventDefault()
 

@@ -7,6 +7,7 @@ const Descrizione = ({ nameOfClass }) => {
         const descErrore = "Il metodo con controllo dell'errore approssima \
         la radice controllando l'aumento di precisione tra due iterazioni successive";
         const descTangenti = "Il metodo delle tangenti viene ideato da Newton";
+        const descInverso = "Il metodo dell'inverso viene ideato da Newton";
 
         switch(nameOfClass){
             case "babilonese":
@@ -26,13 +27,17 @@ const Descrizione = ({ nameOfClass }) => {
                 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0ff048abd4c1a8244f09ce8a7ff394626bdb6f80" />
                 </>);
                 break;
+            case "inverso":
+                return (<>
+                    <p>{descInverso}</p>
+                </>)
             default:
                 return "Il metodo selezionato non esiste"
         }
     }
 
     return (
-        <p>{chooseDesc(nameOfClass)}</p>
+        <>{chooseDesc(nameOfClass)}</>
     )
 }
 

@@ -6,6 +6,7 @@ const TableHead = () => {
                 <td>Babilonese</td>
                 <td>Errore</td>
                 <td>Tangenti</td>
+                <td>Inverso</td>
             </tr>
         </thead>
     )

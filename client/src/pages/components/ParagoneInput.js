@@ -33,24 +33,6 @@ const ParagoneInput = ({ risultato, setRisultato, showHead, setShowHead }) => {
         if(showHead == false) {
             setShowHead(true)
         }
-        /*const risBab = []
-        const risErr = []
-        const risTan = []
-        
-
-        resjsonrisultato.map( (ris) => {
-            risBab.push(ris.babilonese)
-            risErr.push(ris.errore)
-            risTan.push(ris.tangenti)
-        })
-
-        console.log(risBab)
-        setRisultato([
-            risBab,
-            risErr,
-            risTan
-        ])
-        console.log(risultato)*/
     }
 
     return (
@@ -60,7 +42,7 @@ const ParagoneInput = ({ risultato, setRisultato, showHead, setShowHead }) => {
                 <input type="number" placeholder="Ripetizioni massime" value={ripetizioni} onChange={(e) => setRipetizioni(e.target.value)}></input> <br></br> <br></br>
                 <input type="number" placeholder="Numero confronti" value={confronti} onChange={(e) => setConfronti(e.target.value)}></input> <br></br> <br></br>
                 <input type="submit" value="Paragona!" className="calcola"></input>
-            </form>      
+            </form> 
         </div>
     )
 

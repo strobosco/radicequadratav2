@@ -1,6 +1,7 @@
 import Titolo from "./components/TitoloParagone";
 import ParagoneInput from "./components/ParagoneInput";
-import Table from './components/Table'
+import Table from './components/Table';
+import Grafici from "./components/Grafici";
 import { useState } from "react";
 
 const Paragone = () => {
@@ -13,6 +14,7 @@ const Paragone = () => {
         <Titolo />
         <ParagoneInput risultato={risultato} setRisultato={setRisultato} showHead={showHead} setShowHead={setShowHead} />
         <Table risultato={risultato} showHead={showHead} />
+        <Grafici />
         </>
     );
 }

@@ -12,6 +12,7 @@ const Table = ({ risultato, showHead }) => {
                         <td>{ris.babilonese}</td>
                         <td>{ris.errore}</td>
                         <td>{ris.tangenti}</td>
+                        <td>{ris.inverso}</td>
                     </tr>  
             )})
         )

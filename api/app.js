@@ -30,6 +30,9 @@ app.post("/", (req, res) => {
         case "tangenti":
             risultato = radice.Tangenti(radicando, iterazioni);
             break;
+        case "inverso":
+            risultato = 1 / radice.Inverso(radicando, iterazioni);
+            break;
         default:
             console.log("Metodo non supportato.");
             break;
@@ -57,20 +60,14 @@ app.post("/paragone", (req, res) => {
         let risBab = radice.Babilonese(radicando, iterazioni);
         let risErr = radice.Errore(radicando, iterazioni);
         let risTan = radice.Tangenti(radicando, iterazioni);
-
-        const ris = {
-            confronto: i + 1,
-            babilonese: risBab,
-            errore:risErr,
-            tangenti: risTan,
-        }
-
+        let risInv = 1 / radice.Inverso(radicando, iterazioni);
 
         risultato[i] = {
             confronto: i + 1,
             babilonese: risBab,
             errore:risErr,
             tangenti: risTan,
+            inverso: risInv,
         }
 
     }
