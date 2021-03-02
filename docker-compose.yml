@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ./api
+      dockerfile: ./Dockerfile
+    image: strobosco/dockerbeginning:nodereactbackend
+    ports:
+      - "8080:8080"
+  
+  frontend:
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    image: strobosco/dockerbeginning:nodereactfrontend
+    ports:
+      - "3000:3000"
+    links:
+      - backend
